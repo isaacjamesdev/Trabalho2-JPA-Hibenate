@@ -18,6 +18,7 @@
 		<class>br.ufc.persistencia.model.Secretario</class>
 		<class>br.ufc.persistencia.model.AbstractFuncionario</class>
 		<class>br.ufc.persistencia.model.AbstractPessoa</class>
+		<class>br.ufc.persistencia.model.PesquisadorProjeto</class>
 		
 		
 		<properties>

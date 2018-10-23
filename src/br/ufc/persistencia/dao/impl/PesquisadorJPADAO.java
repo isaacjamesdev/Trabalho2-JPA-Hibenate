@@ -5,7 +5,7 @@ import br.ufc.persistencia.model.Pesquisador;
 
 public class PesquisadorJPADAO extends GenericJPADAO<Pesquisador> implements PesquisadorDAO{
 
-	public PesquisadorJPADAO(Class<Pesquisador> persistentClass) {
+	public PesquisadorJPADAO() {
 		super(Pesquisador.class);
 	}
 

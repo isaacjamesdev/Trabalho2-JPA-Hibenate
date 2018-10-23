@@ -8,35 +8,20 @@ import javax.persistence.Entity;
 @Entity
 public class FuncionarioLimpeza extends AbstractFuncionario {
 
-/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	//	private FuncionarioLimpeza gerente;
 	private int jornadaTrabalho;
-	private int attribute13;
 
-//	FuncionarioLimpeza gerente, 
 
 	@Deprecated
 	public FuncionarioLimpeza() {
 	}
 
 	public FuncionarioLimpeza(String nome, TipoSexo sexo, Calendar dataAniversario,
-			String endereco, BigDecimal salario, Departamento departamento,int jornadaTrabalho, int attribute13) {
+			String endereco, BigDecimal salario, Departamento departamento,int jornadaTrabalho) {
 		super(nome, sexo, dataAniversario, endereco, salario, departamento);
-//		this.gerente = gerente;
 		this.jornadaTrabalho = jornadaTrabalho;
-		this.attribute13 = attribute13;
 	}
-
-//	public FuncionarioLimpeza getGerente() {
-//		return gerente;
-//	}
-//
-//	public void setGerente(FuncionarioLimpeza gerente) {
-//		this.gerente = gerente;
-//	}
 
 	public int getJornadaTrabalho() {
 		return jornadaTrabalho;
@@ -44,13 +29,5 @@ public class FuncionarioLimpeza extends AbstractFuncionario {
 
 	public void setJornadaTrabalho(int jornadaTrabalho) {
 		this.jornadaTrabalho = jornadaTrabalho;
-	}
-
-	public int getAttribute13() {
-		return attribute13;
-	}
-
-	public void setAttribute13(int attribute13) {
-		this.attribute13 = attribute13;
 	}
 }

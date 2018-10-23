@@ -23,6 +23,7 @@ public abstract class AbstractFuncionario extends AbstractPessoa  {
 	private static final long serialVersionUID = 1L;
 	private String endereco;
 	private BigDecimal salario;
+	
 	//muitos pode ter somente um único departamento
 	@ManyToOne 
 	private Departamento departamento;

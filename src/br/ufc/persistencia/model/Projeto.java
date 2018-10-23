@@ -7,8 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Projeto {
@@ -17,11 +17,12 @@ public class Projeto {
 	private int id;
 	private String nome;
 	private int periodoDesenvolvimento;
+
 	@ManyToOne // lado mais forte do relacionamento PROJETO--DEPARTAMENTO
 	Departamento departamento;
 	
-	@ManyToMany (mappedBy="projetos")// (precisamos trabalhar aqui sobre nova coluna)
-	List<Pesquisador> pesquisadores;
+	@OneToMany(mappedBy = "projeto", targetEntity = Pesquisador.class)
+	private List<Pesquisador> pesquisadores = new ArrayList<>();
 	
 	@Deprecated
 	public Projeto() {
@@ -31,7 +32,6 @@ public class Projeto {
 		this.nome = nome;
 		this.periodoDesenvolvimento = periodoDesenvolvimento;
 		this.departamento = departamento;
-		pesquisadores = new ArrayList<>();
 	}
 
 	public String getNome() {

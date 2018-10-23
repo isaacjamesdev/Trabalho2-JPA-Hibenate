@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 @Entity
 public class Secretario extends AbstractFuncionario {
 
+	
+	private static final long serialVersionUID = 1L;
 	private String grauEscolar;
 
 	@Deprecated
