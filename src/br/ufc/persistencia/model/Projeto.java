@@ -4,27 +4,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+/**
+ * @author Isaac James
+ * @Email isaacjames@alu.ufc.br
+ * @Ocupation Graduando de Eng. de Software
+ * @University UFC - Campus Quixada - CE
+ */
 @Entity
 public class Projeto {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 	private String nome;
 	private int periodoDesenvolvimento;
 
-	@ManyToOne // lado mais forte do relacionamento PROJETO--DEPARTAMENTO
+	@ManyToOne(fetch=FetchType.EAGER) // lado mais forte do relacionamento PROJETO--DEPARTAMENTO
 	Departamento departamento;
-	
-	@OneToMany(mappedBy = "projeto", targetEntity = Pesquisador.class)
-	private List<Pesquisador> pesquisadores = new ArrayList<>();
-	
-	@Deprecated
+
+	@OneToMany(mappedBy = "projeto")
+	private List<PesquisadorProjeto> pesquisadores = new ArrayList<>();
+
 	public Projeto() {
 	}
 
@@ -53,4 +60,17 @@ public class Projeto {
 	public void setId(int id) {
 		this.id = id;
 	}
+
+	public int getId() {
+		return id;
+	}
+
+	public Departamento getDepartamento() {
+		return departamento;
+	}
+
+	public void setDepartamento(Departamento departamento) {
+		this.departamento = departamento;
+	}
+
 }
